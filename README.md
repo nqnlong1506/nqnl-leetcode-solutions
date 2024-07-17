@@ -15,3 +15,10 @@ go run problem-1953/main.go
 ```
 go run problem-1986/main.go
 ```
+
+### problem no.2033
+* Maximum Number of Weeks for Which You Can Work
+  > https://leetcode.com/problems/minimum-operations-to-make-a-uni-value-grid/
+```
+go run problem-2033/main.go
+```
