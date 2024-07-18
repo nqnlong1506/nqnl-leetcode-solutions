@@ -29,3 +29,10 @@ go run problem-2033/main.go
 ```
 go run problem-917/main.go
 ```
+
+### problem no.974
+* Subarray Sums Divisible by K
+  > https://leetcode.com/problems/subarray-sums-divisible-by-k/
+```
+go run problem-974/main.go
+```
