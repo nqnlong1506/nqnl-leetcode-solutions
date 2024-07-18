@@ -10,10 +10,7 @@ func main() {
 }
 
 func subarraysDivByK(nums []int, k int) int {
-	return solution1(nums, k)
-	// count := 0
-	// sum := 0
-	// return recursion(0, len(nums)-1, nums, k, count)
+	return solution2(nums, k)
 }
 
 // time limit exceeded
@@ -33,6 +30,33 @@ func solution1(nums []int, k int) int {
 		}
 	}
 	return count
+}
+
+func solution2(nums []int, k int) int {
+	remainders := make(map[int]int)
+	remainders[0] = 1 // Initialize with 0 remainder to handle subarrays starting from index 0
+
+	currentSum := 0
+	cnt := 0
+
+	for i := 0; i < len(nums); i++ {
+		currentSum += nums[i] // Update the cumulative sum
+		remainder := currentSum % k
+
+		// Adjust the remainder to be positive
+		if remainder < 0 {
+			remainder += k
+		}
+
+		// If the remainder is already in the map, it means we found a valid subarray
+		cnt += remainders[remainder]
+
+		// Update the frequency of the current remainder
+		remainders[remainder]++
+	}
+
+	return cnt
+
 }
 
 // func recursion(start int, end int, nums []int, k int, count int) int {
